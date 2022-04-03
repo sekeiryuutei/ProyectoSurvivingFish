@@ -1,0 +1,3 @@
+usuario="root"
+Clave=""
+Nombre de la base de datos "survivingfishdb"

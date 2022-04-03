@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surviving Fish</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <button onclick="location = 'login.php'" class="InicioDeSesion">Inicio De Sesion</button>
+
+    <section>
+        <img src="assets/images/bg.png" id="bg">
+        <img src="assets/images/dori.png" id="moon">
+        <img src="assets/images/mountain.png" id="mountain">
+        <img src="assets/images/road.png" id="road">
+        <img src="assets/images/moon.png" id="circuito">
+        <h2 id="text">Surviving Fish
+            <p id="portafolio">Kamilo Burbano</p>
+            <p id="portafolio">Camilo Salazar</p>
+        </h2>
+    </section>
+    <div style="display: flex; flex-flow: column; color: white; margin: 50px;">
+        <div style="text-align: center; display: flex; flex-flow: column; align-items: center; margin-bottom: 50px;">
+            <h2 style="text-align: center; margin-bottom: 10px; ">¿Quienes somos?</h2>
+            <h4 style="width: 600px;"> Surviving fish es una solución IoT centrada en la producción psicola de pequeña y mediana escala, la cual consiste en reducir la tasa de mortalidad de la especie sembrada.</h4>
+        </div>
+        <div style="display: flex; flex-flow: row; ">
+            <div>
+                <h2 style="text-align: center; margin-bottom: 10px; ">¿A quien está dirigido?</h2>
+                <h4> A toda empresa de pequeña y mediana categoría de producción psicola, aficionados, psiculturores, o personas que no cuenten con conocimiento de la psiculturora, surviving fish se encarga de que la interacción humano pez, sea la más mínima
+                    posible, para que te puedas encargar de otra labores no tan ligadas al cuido del pez.</h4>
+            </div>
+            <div>
+                <h2 style="text-align: center; margin-bottom: 10px; ">¿Cómo lo hacemos? </h2>
+                <h4>Monitoreando constantemente las variables de calidad del agua y del medio ambiente del invernadero, aseguramos de que no pase por alto ningún factor importante para que su producto alcance los más grandes estandares de calidad. podrás
+                    consultar de manera fácil e intuitiva en la página web, dónde recibirá también algunos consejos, por eso somos la mejor opción en el mercado Surviving fish no está centrada en una sola especie psicola, sino también en toda especie
+                    de pez de agua dulce que no supere una longitud de 45cm .
+                </h4>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="orden">
+        <scroll-page id="Isometria">
+            <div id="Isometria">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="assets/images/Tilapia.png" width="600 " height="auto ">
+                    </div>
+                    <div class="contentBx" style="margin-top: 10px;">
+                        <h3 style="margin-top: 30px; ">Tilapia</h3>
+                        <h4 class="price " style="margin-top: 10px; ">Son peces de aguas cálidas, que viven tanto en agua dulce como salada e incluso pueden acostumbrarse a aguas poco oxigenadas. Se encuentra distribuida como especie exótica por América Central, sur del Caribe, sur de Norteamérica
+                            y el sureste asiático.</h4>
+                    </div>
+                </div>
+            </div>
+        </scroll-page>
+        <scroll-page id="Isometria">
+            <div id="Isometria">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="assets/images/Trucha.png" width="700" height="auto">
+                    </div>
+                    <div class="contentBx" style="margin-top: 10px;">
+                        <h3 style="margin-top: 30px; ">Trucha Arcoíris</h3>
+                        <h4 class="price " style="margin-top: 10px; ">La Trucha Arcoíris o Oncorhynchus mykiss, es un pez que pertenece al grupo de los salmónidos originarios de los ríos y lagos de Norte América, y ha sido introducida en el mundo entero debido a su uso en la pesca deportiva y a su
+                            sustanciosa carne. El nombre de este pez se deriva de la particular coloración que posee.</h4>
+                    </div>
+                </div>
+            </div>
+        </scroll-page>
+        <scroll-page id="Isometria ">
+            <div id="Isometria ">
+                <div class="card ">
+                    <div class="imgBx ">
+                        <img src="assets/images/Carpa.png " width="600 " height="auto ">
+                    </div>
+                    <div class="contentBx " style="margin-top: 10px;">
+                        <h3 style="margin-top: 30px; ">Carpa</h3>
+                        <h4 class="price " style="margin-top: 10px;">La carpa común puede llegar a medir 1,2 m de largo y pesar hasta 40 kg, aunque normalmente, en estado adulto, mide de 60 a 90 cm, y su peso ronda los 9 kg. Nada formando cardúmenes; es omnívora, y resistente a una gran variedad
+                            de condiciones climáticas.</h4>
+                    </div>
+                </div>
+            </div>
+        </scroll-page>
+    </div>
+
+    <script type="text/javascript ">
+        let bg = document.getElementById("bg ");
+        let circuito = document.getElementById("circuito ");
+        let moon = document.getElementById("moon ");
+        let mountain = document.getElementById("mountain ");
+        let road = document.getElementById("road ");
+        let text = document.getElementById("text ");
+        let iso = document.getElementById("Isometria ");
+        window.addEventListener('scroll', function() {
+            var value = window.scrollY;
+            bg.style.top = value * 0.7 + 'px';
+            circuito.style.top = -value * 1 + 'px';
+            moon.style.left = -value * 0.5 + 'px';
+            mountain.style.top = value * 0.12 + 'px';
+            road.style.top = value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+            iso.style.top = value * 0.5 + 'px';
+        })
+    </script>
+
+</body>
+<footer style="padding: 10px;">
+    <h2 style="padding: 5px;">¿No sabes que especie sembrar? </h2>
+    <h3 style="padding: 5px;">¿Cuál es la que se te adecua mejor a tus condiciones ambientales?</h3>
+    <h4 style="padding: 10px;">
+        No te preocupes, surviving fish cuenta con un sistema que te provee según tu altitud dónde te encuentras la mejor especie para ser sembrada. </h4>
+    <h2 style="padding: 10; margin-bottom: 20px;">Contacto WhatsApp: 3156796841</h2>
+</footer>
+
+</html>
