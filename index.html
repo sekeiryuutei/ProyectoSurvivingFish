@@ -22,6 +22,7 @@
             <p id="portafolio">Camilo Salazar</p>
         </h2>
     </section>
+
     <div style="display: flex; flex-flow: column; color: white; margin: 50px;">
         <div style="text-align: center; display: flex; flex-flow: column; align-items: center; margin-bottom: 50px;">
             <h2 style="text-align: center; margin-bottom: 10px; ">¿Quienes somos?</h2>
@@ -50,11 +51,11 @@
             <div id="Isometria">
                 <div class="card">
                     <div class="imgBx">
-                        <img src="assets/images/Tilapia.png" width="600 " height="auto ">
+                        <img src="assets/images/Tilapia.png" width="600" height="auto">
                     </div>
                     <div class="contentBx" style="margin-top: 10px;">
-                        <h3 style="margin-top: 30px; ">Tilapia</h3>
-                        <h4 class="price " style="margin-top: 10px; ">Son peces de aguas cálidas, que viven tanto en agua dulce como salada e incluso pueden acostumbrarse a aguas poco oxigenadas. Se encuentra distribuida como especie exótica por América Central, sur del Caribe, sur de Norteamérica
+                        <h3 style="margin-top: 30px;">Tilapia</h3>
+                        <h4 class="price" style="margin-top: 10px;">Son peces de aguas cálidas, que viven tanto en agua dulce como salada e incluso pueden acostumbrarse a aguas poco oxigenadas. Se encuentra distribuida como especie exótica por América Central, sur del Caribe, sur de Norteamérica
                             y el sureste asiático.</h4>
                     </div>
                 </div>
@@ -67,39 +68,43 @@
                         <img src="assets/images/Trucha.png" width="700" height="auto">
                     </div>
                     <div class="contentBx" style="margin-top: 10px;">
-                        <h3 style="margin-top: 30px; ">Trucha Arcoíris</h3>
-                        <h4 class="price " style="margin-top: 10px; ">La Trucha Arcoíris o Oncorhynchus mykiss, es un pez que pertenece al grupo de los salmónidos originarios de los ríos y lagos de Norte América, y ha sido introducida en el mundo entero debido a su uso en la pesca deportiva y a su
+                        <h3 style="margin-top: 30px;">Trucha Arcoíris</h3>
+                        <h4 class="price" style="margin-top: 10px;">La Trucha Arcoíris o Oncorhynchus mykiss, es un pez que pertenece al grupo de los salmónidos originarios de los ríos y lagos de Norte América, y ha sido introducida en el mundo entero debido a su uso en la pesca deportiva y a su
                             sustanciosa carne. El nombre de este pez se deriva de la particular coloración que posee.</h4>
                     </div>
                 </div>
             </div>
         </scroll-page>
-        <scroll-page id="Isometria ">
-            <div id="Isometria ">
-                <div class="card ">
-                    <div class="imgBx ">
-                        <img src="assets/images/Carpa.png " width="600 " height="auto ">
+        <scroll-page id="Isometria">
+            <div id="Isometria">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="assets/images/Carpa.png" width="600" height="auto">
                     </div>
-                    <div class="contentBx " style="margin-top: 10px;">
-                        <h3 style="margin-top: 30px; ">Carpa</h3>
-                        <h4 class="price " style="margin-top: 10px;">La carpa común puede llegar a medir 1,2 m de largo y pesar hasta 40 kg, aunque normalmente, en estado adulto, mide de 60 a 90 cm, y su peso ronda los 9 kg. Nada formando cardúmenes; es omnívora, y resistente a una gran variedad
-                            de condiciones climáticas.</h4>
+                    <div class="contentBx" style="margin-top: 10px;">
+                        <h3 style="margin-top: 30px;">Tilapia Roja</h3>
+                        <h4 class="price" style="margin-top: 10px;">La tilapia roja, también conocida como mojarra roja, es un pez que taxonómicamente no responde a un solo nombre científico. Es un híbrido del cruce de cuatro especies de tilapia: tres de ellas de origen africano y una cuarta israelí.</h4>
                     </div>
                 </div>
             </div>
         </scroll-page>
     </div>
 
-    <script type="text/javascript ">
-        let bg = document.getElementById("bg ");
-        let circuito = document.getElementById("circuito ");
-        let moon = document.getElementById("moon ");
-        let mountain = document.getElementById("mountain ");
-        let road = document.getElementById("road ");
-        let text = document.getElementById("text ");
-        let iso = document.getElementById("Isometria ");
+    <script type="text/javascript">
+        let bg = document.getElementById("bg");
+        let circuito = document.getElementById("circuito");
+        let moon = document.getElementById("moon");
+        let mountain = document.getElementById("mountain");
+        let road = document.getElementById("road");
+        let text = document.getElementById("text");
+        let iso = document.getElementById("Isometria");
+
+
+
         window.addEventListener('scroll', function() {
             var value = window.scrollY;
+
+
             bg.style.top = value * 0.7 + 'px';
             circuito.style.top = -value * 1 + 'px';
             moon.style.left = -value * 0.5 + 'px';
@@ -107,11 +112,12 @@
             road.style.top = value * 0.15 + 'px';
             text.style.top = value * 1 + 'px';
             iso.style.top = value * 0.5 + 'px';
+
         })
     </script>
 
 </body>
-<footer style="padding: 10px;">
+<footer style="padding: 20px;">
     <h2 style="padding: 5px;">¿No sabes que especie sembrar? </h2>
     <h3 style="padding: 5px;">¿Cuál es la que se te adecua mejor a tus condiciones ambientales?</h3>
     <h4 style="padding: 10px;">

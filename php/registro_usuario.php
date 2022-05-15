@@ -36,6 +36,7 @@
     <script>
         function saludos() {
             console.log("Hola Mundo");
+            window.location = "../login.php"
         }
 
         setTimeout(saludos, 3000);
@@ -52,14 +53,26 @@ session_start();
 $nombre_completo = $_POST['nombre_completo'];
 $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
-$contrasena = hash('sha512',$_POST['contrasena']);
+$contrasena = $_POST['contrasena'];
+$contrasena_encriptada = hash('sha512', $_POST['contrasena']);
 
+
+if ($_POST) {
+    $error_encontrado = "";
+    if (validar_contrasena($_POST["contrasena"], $error_encontrado)) {
+        echo '<script>alert("Clave valida!")</script>';
+    } else {
+        echo '<script language="javascript">alert("PASSWORD NO VÁLIDO: '.$error_encontrado.'");</script>';
+        exit();
+        mysqli_close($conexion);
+    }
+}
 //almacena los datos tomados en la base de datos
 $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contrasena)
-          VALUES('$nombre_completo', '$correo', '$usuario', '$contrasena')";
+         VALUES('$nombre_completo', '$correo', '$usuario', '$contrasena_encriptada')";
 //verificar que no se repita el correo en base de datos
 $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo'");
-if(mysqli_num_rows($verificar_correo)>0){
+if (mysqli_num_rows($verificar_correo) > 0) {
     echo '
     <script>
     alert("Este correo ya esta registrado!")
@@ -72,7 +85,7 @@ if(mysqli_num_rows($verificar_correo)>0){
 
 //verificar que no se repita el usuario en base de datos
 $verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$usuario'");
-if(mysqli_num_rows($verificar_usuario)>0){
+if (mysqli_num_rows($verificar_usuario) > 0) {
     echo '
     <script>
     alert("Este nombre de usuario ya esta registrado!")
@@ -85,7 +98,7 @@ if(mysqli_num_rows($verificar_usuario)>0){
 //usando la llave y el codigo mysql agregamos en la tabla usuario, un usuario nuevo.
 $ejecutar = mysqli_query($conexion, $query);
 
-if($ejecutar){
+if ($ejecutar) {
     $_SESSION['usuario'] = $correo;
     $_SESSION['name'] = $usuario;
     echo '
@@ -94,13 +107,44 @@ if($ejecutar){
         window.location = "../main.php"; 
     </script>
     ';
-}else{
+} else {
     echo '
     <script>
         alert("Intentalo de nuevo, no fue posible guardar el usario");
         window.location = "../main.php";
     </script>
-    ';  
+    ';
+}
+/*
+Validar que la contraseña tiene ciertas características que la hagan suficientemente fuerte
+Que la contrasena tiene al menos 6 caracteres
+Que el password tiene como máximo 16 caracteres
+Que tiene al menos 1 letra minúscula
+Que al menos tiene 1 letra mayúscula
+Que tiene al menos un carácter numérico*/
+function validar_contrasena($contrasena, &$error_contrasena){
+    if (strlen($contrasena) < 6) {
+        $error_contrasena = "La contrasena debe tener al menos 6 caracteres";
+        return false;
+    }
+    if (strlen($contrasena) > 16) {
+        $error_contrasena = "La contrasena no puede tener más de 16 caracteres";
+        return false;
+    }
+    if (!preg_match('`[a-z]`', $contrasena)) {
+        $error_contrasena = "La contrasena debe tener al menos una letra minúscula";
+        return false;
+    }
+    if (!preg_match('`[A-Z]`', $contrasena)) {
+        $error_contrasena = "La contrasena debe tener al menos una letra mayúscula";
+        return false;
+    }
+    if (!preg_match('`[0-9]`', $contrasena)) {
+        $error_contrasena = "La contrasena debe tener al menos un caracter numérico";
+        return false;
+    }
+    $error_contrasena = "";
+    return true;
 }
 mysqli_close($conexion);
- ?>
+?>

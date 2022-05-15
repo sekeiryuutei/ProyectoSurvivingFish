@@ -134,8 +134,8 @@ body {
 }
 
 #morado {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+    -webkit-filter: invert(10%);
+    filter: invert(10%);
 }
 
 #rojo {
@@ -144,7 +144,7 @@ body {
 
 .container .box:nth-child(3) .circle,
 .container .box:nth-child(3) .buy {
-    background: #fb4b4f;
+    background: #a71b1e;
 }
 
 .name {
